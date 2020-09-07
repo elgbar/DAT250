@@ -1,4 +1,6 @@
-
-.gradle/
-
-.idea/
+**/*.log
+**/persistence
+**/.gradle/
+**/.idea/
+**/out
+**/build
