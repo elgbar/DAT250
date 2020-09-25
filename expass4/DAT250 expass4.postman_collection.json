@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "355769d9-49d6-4245-a0c1-5263c581043f",
+		"name": "DAT250 expass4",
+		"description": "https://github.com/selabhvl/dat250public/blob/master/expassignments/expass4.md",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TODO",
+			"item": [
+				{
+					"name": "create valid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "862a89c7-6850-4731-b14d-cd0fb68e2993",
+								"exec": [
+									"",
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"id\", jsonData.id);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"yes\",\n    \"summary\": \"wow\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/todo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a1885c56-2b31-4bfe-b03a-dd809b3cef77",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/todo?id={{id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"todo"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b4ad8a3f-b169-4d86-af9f-6ceaa54446b5",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/todo?id=0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"todo"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e4217231-b912-4d50-a4d6-c0cc535e94ea",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\"\n    \"comment\": \"no\",\n    \"summary\": \"buu\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/todo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "incorrect json",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "55f5c707-48ce-456a-aabd-62be3d376e6d",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"red\": 3,\n    \"green\": 2\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/todo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"todo"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Counters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/counters",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"counters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Counters",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"red\": 3,\n    \"green\": 2\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/counters",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"counters"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
