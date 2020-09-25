@@ -1,4 +1,4 @@
-# DAT250 Experiment Assignment 2
+# DAT250 Experiment Assignment 3
 
 ## MongoDB installation verification
 
